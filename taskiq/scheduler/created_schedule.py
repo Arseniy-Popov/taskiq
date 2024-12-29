@@ -32,7 +32,9 @@ class CreatedSchedule(Generic[_ReturnType]):
         ...
 
     @overload
-    async def kiq(self: "CreatedSchedule[_ReturnType]") -> AsyncTaskiqTask[_ReturnType]:
+    async def kiq(
+        self: "CreatedSchedule[_ReturnType]",
+    ) -> AsyncTaskiqTask[_ReturnType]:
         ...
 
     async def kiq(self) -> Any:
